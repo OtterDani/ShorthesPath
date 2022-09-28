@@ -6,17 +6,11 @@ Created on Fri Sep 23 09:28:37 2022
 """
 import pandas as pd 
 import geopy.distance
-import sqlalchemy as db
 from scipy.sparse import csr_matrix
 from scipy.sparse.csgraph import shortest_path
 import numpy as np
 import googlemaps
 
-
-engine_sgr = db.create_engine('mssql+pyodbc://192.168.24.168/MDLO_REGALIAS?driver=SQL Server&trusted_connectios=yes')
-query_divipola_interna="SELECT DEPARTAMENTO, CODIGO_MUNICIPIO, MUNICIPIO, LONGITUD, LATITUD FROM [dbo].[DIVIPOLA_AJUSTADO]"
-
-cabeceras_int=pd.read_sql_query(query_divipola_interna, engine_sgr)
 
 cabeceras=pd.read_excel("S:/Unidad de Analisis/4.PROYECTOS/SGR/01_ARC_ENTRADA/GEOCENTROS.xlsx", converters={'COD_DANE':str})
 aerop=pd.read_excel("S:/Unidad de Analisis/4.PROYECTOS/SGR/01_ARC_ENTRADA/AEROPUERTOS_COL.xlsx", converters={'CODDANE_MP':str})
