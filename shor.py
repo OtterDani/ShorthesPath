@@ -12,8 +12,8 @@ import numpy as np
 import googlemaps
 
 
-cabeceras=pd.read_excel("S:/Unidad de Analisis/4.PROYECTOS/SGR/01_ARC_ENTRADA/GEOCENTROS.xlsx", converters={'COD_DANE':str})
-aerop=pd.read_excel("S:/Unidad de Analisis/4.PROYECTOS/SGR/01_ARC_ENTRADA/AEROPUERTOS_COL.xlsx", converters={'CODDANE_MP':str})
+cabeceras=pd.read_excel("GEOCENTROS.xlsx", converters={'COD_DANE':str})
+aerop=pd.read_excel("AEROPUERTOS_COL.xlsx", converters={'CODDANE_MP':str})
 
 gmaps = googlemaps.Client(key='your key')
 
